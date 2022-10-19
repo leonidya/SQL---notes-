@@ -32,3 +32,44 @@ VALUES
 ('Cannery Row', 'John', 'Steinbeck', 1945, 95, 181),
 ('Oblivion: Stories', 'David', 'Foster Wallace', 2004, 172, 329),
 ('Consider the Lobster', 'David', 'Foster Wallace', 2005, 92, 343);
+-----------------------------------------------------------------------------
+SELECT author_fname, author_lname FROM books;
+ 
+CONCAT(x,y,z) // from slides
+ 
+CONCAT(column, anotherColumn) // from slides
+ 
+CONCAT(author_fname, author_lname)
+ 
+CONCAT(column, 'text', anotherColumn, 'more text')
+ 
+CONCAT(author_fname, ' ', author_lname)
+ 
+CONCAT(author_fname, author_lname); // invalid syntax
+ 
+SELECT CONCAT('Hello', 'World');
+ 
+SELECT CONCAT('Hello', '...', 'World');
+ 
+SELECT
+  CONCAT(author_fname, ' ', author_lname)
+FROM books;
+ 
+SELECT
+  CONCAT(author_fname, ' ', author_lname)
+  AS 'full name'
+FROM books;
+ 
+SELECT author_fname AS first, author_lname AS last, 
+  CONCAT(author_fname, ' ', author_lname) AS full
+FROM books;
+ 
+SELECT author_fname AS first, author_lname AS last, 
+  CONCAT(author_fname, ', ', author_lname) AS full
+FROM books;
+ 
+SELECT CONCAT(title, '-', author_fname, '-', author_lname) FROM books;
+ 
+SELECT 
+    CONCAT_WS(' - ', title, author_fname, author_lname) 
+FROM books;
